@@ -1,0 +1,84 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* permet de retirer la mise forme par defaut*/
+}
+
+body {
+    max-width: 100vw;
+    /*on prend toute la largeur possible de l'écran*/
+    height: 100vh;
+    /*on prend toute la hauteur possible de l'écran*/
+    display: flex;
+    justify-content: center;
+    /* mettre les elements au centre de l'écran*/
+    align-items: center;
+    font-family: sans-serif;
+    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+
+}
+
+.calculatrice {
+    background-color: #222222;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 5px black;
+
+}
+
+.ecran {
+    width: 100%;
+    height: 100px;
+    background-color: rgb(198, 237, 255);
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-end;
+    /*aligner à droite*/
+    align-items: flex-end;
+    padding: 5px;
+    font-size: 25px;
+
+}
+
+.touche {
+    /*transformé tous les boutons sous forme de grille*/
+    display: grid;
+    grid-template-columns: repeat(4, 50px);
+    /*4 colonne de 50px de large*/
+    grid-template-rows: repeat(5, 50px);
+    /* 5 ligne de 50 px de hauteur*/
+    grid-gap: 7px;
+    /* espace entre les touches*/
+}
+
+button {
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    box-shadow: 0 3px #a8a8a8;
+    font-size: 18px;
+}
+
+button:active {
+    box-shadow: 0 1 px;
+    transform: translateY(2px);
+}
+
+button[data-key="8"] {
+    background-color: #ff9900;
+    font-weight: bold;
+    color: white;
+}
+
+button[data-key="13"] {
+    grid-column: span 2;
+    background-color: #36e700;
+    font-weight: bold;
+    color: white;
+    font-size: 35px
+}
